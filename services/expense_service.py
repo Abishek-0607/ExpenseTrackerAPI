@@ -24,16 +24,15 @@ def create_expense(data, idempotency_key):
 
     return expense
 
-
 def get_expenses(category=None, sort=None):
     query = Expense.query
 
     if category:
-        query = query.filter_by(category=category)
+        query = query.filter(Expense.category == category)
 
     if sort == "date_desc":
-        query = query.order_by(Expense.date.desc())
+        query = query.order_by(Expense.date.desc(), Expense.created_at.desc())
     else:
-        query = query.order_by(Expense.created_at.desc())
+        query = query.order_by(Expense.date.asc(), Expense.created_at.asc())
 
     return query.all()
