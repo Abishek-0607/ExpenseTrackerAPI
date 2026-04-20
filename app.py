@@ -19,7 +19,7 @@ def create_app():
 
     app.config.from_object(Config) #loading env variables into app config
 
-    CORS(app, origin=[Config.FRONTEND_URL])
+    CORS(app)
     with app.app_context():
 
         db.create_all()
