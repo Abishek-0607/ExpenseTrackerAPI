@@ -3,3 +3,4 @@ Flask-SQLAlchemy==3.1.1
 Flask-Migrate==4.0.5
 Flask-CORS===6.0.2
 python-dotenv==1.2.2
+flask-restx==0.9.7.1
