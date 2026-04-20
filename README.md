@@ -94,3 +94,14 @@ API Endpoints
 
 GET /expenses -> Get all expenses
 POST /expenses -> Create expense
+
+### Backend Cold Start Behavior
+The API is deployed on a free hosting platform.
+If the server has been idle, the first request may take ~30–50 seconds to respond due to cold start.
+After initialization, responses will be significantly faster.
+
+### TRADE-OFFS AND LIMITATIONS
+    Authentication & Authorization: User authentication (JWT, login/signup, role-based access control) was not implemented to keep the system lightweight within the timebox.
+    Security Hardening: Advanced security practices (rate limiting, API key validation, request throttling) were not added due to scope limitations.
+    CORS Configuration: The backend is configured with open CORS policy to allow requests from all regions, ensuring smooth integration with free deployment platforms.
+    Scalability Optimizations: No caching layers (like Redis) or performance optimizations were introduced, as the focus was on building a functional CRUD API.
