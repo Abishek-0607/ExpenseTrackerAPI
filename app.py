@@ -2,6 +2,7 @@ from flask import Flask
 from routes.health import health_bp
 from database import db
 from routes.expenses import expenses_bp
+from routes.categories import categories_bp
 from flask_cors import CORS
 from config import Config
 
@@ -22,7 +23,7 @@ def create_app():
 
     app.register_blueprint(expenses_bp)
     app.register_blueprint(health_bp)
-
+    app.register_blueprint(categories_bp)
     return app
 
 if __name__ == "__main__":
