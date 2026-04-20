@@ -29,6 +29,4 @@ def create_app():
     app.register_blueprint(categories_bp)
     return app
 
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)
+app = create_app()
